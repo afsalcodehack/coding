@@ -1,0 +1,5 @@
+
+#git rm -r --cached src/.history/
+
+*.iml
+.history/
