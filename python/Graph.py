@@ -12,7 +12,6 @@ def generate_edges(graph):
     for node in graph:
         for neighbour in graph[node]:
             edges.append((node, neighbour))
-
     return edges
 
 
