@@ -1,4 +1,6 @@
 
+from queue import Queue
+
 class Node:
 
     def __init__(self, data) -> None:
@@ -7,17 +9,23 @@ class Node:
         self.data = data
     
 class Solution:
-    max_level = 0
-    map = {}
+
     def tree_max_width(self,node: Node , level):
-        if node is None: return
+        max_width = 0
+        q1 = Queue()
+        marker = Node(-1)
+        q1.put(node)
+        q1.put(marker)
+        while not q1.empty():
+            current_node = q1.get()
+            if(current_node == marker):
+                q1.put(marker)
+                print("marker found")
+            else:
+                print(current_node.data)
+                q1.put(current_node.left)
+                q1.put(current_node.right)
 
-        if level > self.max_level:
-            self.max_level = level
-            
-        self.tree_max_width(node.left , level + 1)
-
-        self.tree_max_width(node.right , level + 1)  
 
 
 
@@ -34,5 +42,5 @@ root.right.right.right.right = Node(12);
 
 driver = Solution()
 driver.tree_max_width(root , 1)
-print(driver.max_level)
+print(driver.max_width)
 
