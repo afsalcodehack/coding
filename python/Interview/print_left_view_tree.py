@@ -11,7 +11,6 @@ class Node:
 class Solution:
 
     def print_left_view(self,node: Node):
-        width_count = 0
         q1 = Queue()
         marker = Node(-1)
         q1.put(node)
@@ -25,10 +24,10 @@ class Solution:
                 isMarker = False
 
             if current_node == marker and not q1.empty():
+                isMarker = True
                 q1.put(marker)
             else:
-                width_count = width_count + 1
-                print(current_node.data)
+
                 if current_node.left is not None:
                     q1.put(current_node.left)
                 if current_node.right is not None:
@@ -37,14 +36,21 @@ class Solution:
 
 
 
-root = Node(4)
-root.left = Node(5);
-root.right = Node(2);
-root.right.left = Node(3);
-root.right.right = Node(1);
-root.right.left = Node(6);
-root.right.left.left = Node(6)
-root.right.left.right = Node(7)
+# root = Node(4)
+# root.left = Node(5);
+# root.right = Node(2);
+# root.right.left = Node(3);
+# root.right.right = Node(1);
+# root.right.left.left = Node(6);
+# root.right.left.right = Node(7)
+
+
+root = Node(1)
+root.left = Node(2);
+root.right = Node(3);
+root.left.right = Node(4);
+root.left.right.right = Node(5);
+root.left.right.right.right = Node(6);
 
 driver = Solution()
 driver.print_left_view(root)
