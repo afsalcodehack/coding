@@ -1,8 +1,20 @@
-list = {}
+class Solution:
+    keys  = {1 : "abc", 2 : "def", 3: "ghi"}
+    def findDailer(self ,result,  level, nums):
 
-list[1] = []
+        if len(nums) == level:
+            print(result)
+            return
+        
+        for i in self.keys[int(nums[level])]:
+            result = result + i
+            self.findDailer(result, level + 1 , nums)
+            result = result[:-1]
 
-list[1].append((1,2))
-list[1].append((2,2))
-list[1].append((4,5))
+
+
+driver  = Solution()
+
+driver.findDailer('',0, '123')
+
 
