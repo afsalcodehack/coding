@@ -8,6 +8,13 @@ public class Main {
         int i = 1;
         
         int count = 0;
+
+        for (String e : new String[]{"Volvo", "BMW", "Ford", "Mazda"}){
+            System.out.println(e);
+        }
+
+
+        System.out.println("hello this is my code");
         
         while( n > count)
         {

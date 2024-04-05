@@ -8,5 +8,5 @@ class Solution:
         return res
 
 service = Solution()
-print(service.climbStairs(2))
+print(service.climbStairs(20))
 

@@ -10,4 +10,6 @@ q.put(1)
 q.put(3)
 
 print(q.get())
-
+print(q.get())
+print("this is a test")
+print("somthin went wrong")
